@@ -1,0 +1,634 @@
+@import "tailwindcss";
+
+:root {
+  --vitacare-primary: #3b82f6;
+  --vitacare-primary-dark: #2563eb;
+  --vitacare-primary-light: #60a5fa;
+  --vitacare-secondary: #f3f4f6;
+  --vitacare-secondary-dark: #e5e7eb;
+
+  --vitacare-success: #10b981;
+  --vitacare-warning: #f59e0b;
+  --vitacare-error: #ef4444;
+  --vitacare-info: #3b82f6;
+
+  --vitacare-text-primary: #1f2937;
+  --vitacare-text-secondary: #6b7280;
+  --vitacare-text-light: #9ca3af;
+
+  --vitacare-bg-primary: #ffffff;
+  --vitacare-bg-secondary: #f9fafb;
+  --vitacare-bg-tertiary: #f3f4f6;
+
+  --vitacare-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --vitacare-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --vitacare-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --vitacare-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --vitacare-radius-sm: 0.375rem;
+  --vitacare-radius-md: 0.5rem;
+  --vitacare-radius-lg: 0.75rem;
+  --vitacare-radius-xl: 1rem;
+
+  --vitacare-spacing-xs: 0.5rem;
+  --vitacare-spacing-sm: 0.75rem;
+  --vitacare-spacing-md: 1rem;
+  --vitacare-spacing-lg: 1.5rem;
+  --vitacare-spacing-xl: 2rem;
+  --vitacare-spacing-2xl: 3rem;
+
+  --vitacare-transition: all 0.3s ease;
+  --vitacare-transition-fast: all 0.15s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--vitacare-text-primary);
+  background-color: var(--vitacare-bg-secondary);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--vitacare-text-primary);
+  margin-bottom: var(--vitacare-spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--vitacare-spacing-md);
+  color: var(--vitacare-text-secondary);
+}
+
+.vitacare-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--vitacare-spacing-lg);
+}
+
+.vitacare-section {
+  padding: var(--vitacare-spacing-2xl) 0;
+}
+
+.vitacare-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.vitacare-card {
+  background-color: var(--vitacare-bg-primary);
+  border-radius: var(--vitacare-radius-lg);
+  box-shadow: var(--vitacare-shadow-md);
+  padding: var(--vitacare-spacing-xl);
+  transition: var(--vitacare-transition);
+  border: 1px solid var(--vitacare-secondary-dark);
+}
+
+.vitacare-card:hover {
+  box-shadow: var(--vitacare-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.vitacare-card-header {
+  margin-bottom: var(--vitacare-spacing-lg);
+  padding-bottom: var(--vitacare-spacing-md);
+  border-bottom: 2px solid var(--vitacare-secondary);
+}
+
+.vitacare-card-body {
+  padding: var(--vitacare-spacing-md) 0;
+}
+
+.vitacare-card-footer {
+  margin-top: var(--vitacare-spacing-lg);
+  padding-top: var(--vitacare-spacing-md);
+  border-top: 1px solid var(--vitacare-secondary);
+}
+
+.vitacare-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.vitacare-form-group {
+  margin-bottom: var(--vitacare-spacing-lg);
+}
+
+.vitacare-label {
+  display: block;
+  font-weight: 600;
+  color: var(--vitacare-text-primary);
+  margin-bottom: var(--vitacare-spacing-xs);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.vitacare-input {
+  width: 100%;
+  padding: var(--vitacare-spacing-sm) var(--vitacare-spacing-md);
+  border: 2px solid var(--vitacare-secondary-dark);
+  border-radius: var(--vitacare-radius-md);
+  font-size: 1rem;
+  color: var(--vitacare-text-primary);
+  background-color: var(--vitacare-bg-primary);
+  transition: var(--vitacare-transition-fast);
+  outline: none;
+}
+
+.vitacare-input:focus {
+  border-color: var(--vitacare-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.vitacare-input:hover {
+  border-color: var(--vitacare-primary-light);
+}
+
+.vitacare-input::placeholder {
+  color: var(--vitacare-text-light);
+}
+
+.vitacare-input:disabled {
+  background-color: var(--vitacare-bg-tertiary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.vitacare-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.vitacare-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--vitacare-spacing-sm) var(--vitacare-spacing-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--vitacare-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--vitacare-transition-fast);
+  text-decoration: none;
+  outline: none;
+  gap: var(--vitacare-spacing-xs);
+}
+
+.vitacare-btn-primary {
+  background-color: var(--vitacare-primary);
+  color: white;
+  box-shadow: var(--vitacare-shadow-sm);
+}
+
+.vitacare-btn-primary:hover {
+  background-color: var(--vitacare-primary-dark);
+  box-shadow: var(--vitacare-shadow-md);
+  transform: translateY(-1px);
+}
+
+.vitacare-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--vitacare-shadow-sm);
+}
+
+.vitacare-btn-secondary {
+  background-color: var(--vitacare-secondary);
+  color: var(--vitacare-text-primary);
+  border: 2px solid var(--vitacare-secondary-dark);
+}
+
+.vitacare-btn-secondary:hover {
+  background-color: var(--vitacare-secondary-dark);
+  border-color: var(--vitacare-text-light);
+}
+
+.vitacare-btn-outline {
+  background-color: transparent;
+  color: var(--vitacare-primary);
+  border: 2px solid var(--vitacare-primary);
+}
+
+.vitacare-btn-outline:hover {
+  background-color: var(--vitacare-primary);
+  color: white;
+}
+
+.vitacare-btn-success {
+  background-color: var(--vitacare-success);
+  color: white;
+}
+
+.vitacare-btn-success:hover {
+  background-color: #059669;
+}
+
+.vitacare-btn-danger {
+  background-color: var(--vitacare-error);
+  color: white;
+}
+
+.vitacare-btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.vitacare-btn-lg {
+  padding: var(--vitacare-spacing-md) var(--vitacare-spacing-2xl);
+  font-size: 1.125rem;
+}
+
+.vitacare-btn-sm {
+  padding: 0.375rem var(--vitacare-spacing-md);
+  font-size: 0.875rem;
+}
+
+.vitacare-btn-block {
+  width: 100%;
+}
+
+.vitacare-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.vitacare-link {
+  color: var(--vitacare-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--vitacare-transition-fast);
+  position: relative;
+}
+
+.vitacare-link:hover {
+  color: var(--vitacare-primary-dark);
+  text-decoration: underline;
+}
+
+.vitacare-link-underline {
+  position: relative;
+}
+
+.vitacare-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--vitacare-primary);
+  transition: width 0.3s ease;
+}
+
+.vitacare-link-underline:hover::after {
+  width: 100%;
+}
+
+.vitacare-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--vitacare-radius-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vitacare-badge-primary {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--vitacare-primary);
+}
+
+.vitacare-badge-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--vitacare-success);
+}
+
+.vitacare-badge-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--vitacare-warning);
+}
+
+.vitacare-badge-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--vitacare-error);
+}
+
+.vitacare-alert {
+  padding: var(--vitacare-spacing-md);
+  border-radius: var(--vitacare-radius-md);
+  margin-bottom: var(--vitacare-spacing-md);
+  border-left: 4px solid;
+}
+
+.vitacare-alert-info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: var(--vitacare-info);
+  color: var(--vitacare-primary-dark);
+}
+
+.vitacare-alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: var(--vitacare-success);
+  color: #065f46;
+}
+
+.vitacare-alert-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: var(--vitacare-warning);
+  color: #92400e;
+}
+
+.vitacare-alert-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: var(--vitacare-error);
+  color: #991b1b;
+}
+
+.vitacare-divider {
+  height: 1px;
+  background-color: var(--vitacare-secondary-dark);
+  margin: var(--vitacare-spacing-xl) 0;
+  border: none;
+}
+
+.vitacare-spinner {
+  border: 3px solid var(--vitacare-secondary);
+  border-top-color: var(--vitacare-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: vitacare-spin 0.8s linear infinite;
+}
+
+@keyframes vitacare-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vitacare-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--vitacare-secondary) 25%,
+    var(--vitacare-secondary-dark) 50%,
+    var(--vitacare-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: vitacare-skeleton 1.5s ease-in-out infinite;
+  border-radius: var(--vitacare-radius-md);
+}
+
+@keyframes vitacare-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.vitacare-text-center {
+  text-align: center;
+}
+
+.vitacare-text-right {
+  text-align: right;
+}
+
+.vitacare-text-left {
+  text-align: left;
+}
+
+.vitacare-mt-sm {
+  margin-top: var(--vitacare-spacing-sm);
+}
+.vitacare-mt-md {
+  margin-top: var(--vitacare-spacing-md);
+}
+.vitacare-mt-lg {
+  margin-top: var(--vitacare-spacing-lg);
+}
+.vitacare-mt-xl {
+  margin-top: var(--vitacare-spacing-xl);
+}
+
+.vitacare-mb-sm {
+  margin-bottom: var(--vitacare-spacing-sm);
+}
+.vitacare-mb-md {
+  margin-bottom: var(--vitacare-spacing-md);
+}
+.vitacare-mb-lg {
+  margin-bottom: var(--vitacare-spacing-lg);
+}
+.vitacare-mb-xl {
+  margin-bottom: var(--vitacare-spacing-xl);
+}
+
+.vitacare-p-sm {
+  padding: var(--vitacare-spacing-sm);
+}
+.vitacare-p-md {
+  padding: var(--vitacare-spacing-md);
+}
+.vitacare-p-lg {
+  padding: var(--vitacare-spacing-lg);
+}
+.vitacare-p-xl {
+  padding: var(--vitacare-spacing-xl);
+}
+
+.vitacare-shadow-sm {
+  box-shadow: var(--vitacare-shadow-sm);
+}
+.vitacare-shadow-md {
+  box-shadow: var(--vitacare-shadow-md);
+}
+.vitacare-shadow-lg {
+  box-shadow: var(--vitacare-shadow-lg);
+}
+.vitacare-shadow-xl {
+  box-shadow: var(--vitacare-shadow-xl);
+}
+
+.vitacare-rounded-sm {
+  border-radius: var(--vitacare-radius-sm);
+}
+.vitacare-rounded-md {
+  border-radius: var(--vitacare-radius-md);
+}
+.vitacare-rounded-lg {
+  border-radius: var(--vitacare-radius-lg);
+}
+.vitacare-rounded-xl {
+  border-radius: var(--vitacare-radius-xl);
+}
+.vitacare-rounded-full {
+  border-radius: 9999px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .vitacare-container {
+    padding: 0 var(--vitacare-spacing-md);
+  }
+
+  .vitacare-card {
+    padding: var(--vitacare-spacing-lg);
+  }
+
+  .vitacare-form {
+    max-width: 100%;
+  }
+
+  .vitacare-section {
+    padding: var(--vitacare-spacing-xl) 0;
+  }
+
+  .vitacare-btn-lg {
+    padding: var(--vitacare-spacing-sm) var(--vitacare-spacing-lg);
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .vitacare-card {
+    padding: var(--vitacare-spacing-md);
+  }
+
+  .vitacare-btn {
+    padding: var(--vitacare-spacing-sm) var(--vitacare-spacing-md);
+    font-size: 0.875rem;
+  }
+}
+
+.MuiButton-root.vitacare-mui-btn {
+  border-radius: var(--vitacare-radius-md) !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: var(--vitacare-spacing-sm) var(--vitacare-spacing-xl) !important;
+  transition: var(--vitacare-transition-fast) !important;
+}
+
+.MuiButton-root.vitacare-mui-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--vitacare-shadow-md) !important;
+}
+
+.MuiTextField-root.vitacare-mui-input .MuiOutlinedInput-root {
+  border-radius: var(--vitacare-radius-md) !important;
+}
+
+.MuiTextField-root.vitacare-mui-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--vitacare-primary-light) !important;
+}
+
+.MuiTextField-root.vitacare-mui-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--vitacare-primary) !important;
+  border-width: 2px !important;
+}
+
+@keyframes vitacare-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vitacare-fade-in {
+  animation: vitacare-fade-in 0.5s ease-out;
+}
+
+@keyframes vitacare-slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.vitacare-slide-in {
+  animation: vitacare-slide-in 0.4s ease-out;
+}
+
+@media print {
+  .vitacare-card {
+    box-shadow: none;
+    border: 1px solid var(--vitacare-secondary-dark);
+  }
+
+  .vitacare-btn {
+    display: none;
+  }
+}
